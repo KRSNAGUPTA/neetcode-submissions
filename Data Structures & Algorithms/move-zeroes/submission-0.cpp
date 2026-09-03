@@ -1,0 +1,19 @@
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int n = nums.size();
+        int i = 0;
+        while(i<n){
+            if(nums[i] == 0){
+                int j = i+1;
+                while(j<n){
+                    nums[j-1] = nums[j];
+                    nums[j] = 0;
+                    j++;
+                }
+                n--;
+            }
+            if(nums[i] != 0) i++;
+        }
+    }
+};
